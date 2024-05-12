@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Text, Image } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const LoginScreen = () => {
@@ -22,6 +22,7 @@ const LoginScreen = () => {
       <Text style={styles.title}>
         EcoIdentify
       </Text>
+      {/*Esto es el input de usuario */}
       <View style={styles.inputContainer}>
         <Image source={require('./src/Icons/profile.png')} style={styles.icon} />
         <TextInput
@@ -31,29 +32,68 @@ const LoginScreen = () => {
           value={username}
         />
       </View>
-      
-      <View style = {styles.button}>
-      <Button title="Entrar" onPress={handleLogin} />
+      {/*Esto es el input de contraseña */}
+
+      <View style={styles.inputContainer}>
+        <Image source={require('./src/Icons/passwd.png')} style={styles.icon} />
+        <TextInput
+          style={styles.input}
+          placeholder="Contraseña"
+          onChangeText={setPassword}
+          value={password}
+        />
       </View>
-      <Button title="Registrar" onPress={handleRegister} />
+      
+      <TouchableOpacity onPress={handleLogin} style={[styles.button, { backgroundColor: '#3498db' }]}>
+        <Text style={styles.buttonText}>Entrar</Text>
+      </TouchableOpacity>
+
+      <View style={styles.register}>
+      <TouchableOpacity onPress={handleRegister}>
+        <Text style={styles.text2}>No tienes una cuenta?</Text>
+        <Text style={styles.text}>Crear</Text>
+      </TouchableOpacity>
+    </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  register:{
+    flexDirection: 'row',
+    alignItems: 'center', // Ajusta según sea necesario
+  },
+  text: {
+    fontSize: 13,
+    color: 'black',
+    textDecorationLine: 'underline',
+  },
+  text2:{
+    fontSize: 13,
+    color: 'black',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop:3
+  },
   input: {
-
     marginBottom: 2,
     padding: 5,
 
   },
   button:{
-    marginBottom: 10 
+    marginBottom: 10, 
+    borderRadius:25,
+    width:180,
+    height:30,
+    alignItems:'center'
   },
   title:{
     fontSize:30,
