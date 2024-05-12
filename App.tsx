@@ -19,9 +19,9 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
-        EcoIdentify
-      </Text>
+      <View style={styles.UnderTittle}>
+        <Image source={require('./src/images/UnderTittle.jpg')} style={styles.image}/>
+      </View>
       {/*Esto es el input de usuario */}
       <View style={styles.inputContainer}>
         <Image source={require('./src/Icons/profile.png')} style={styles.icon} />
@@ -44,24 +44,44 @@ const LoginScreen = () => {
         />
       </View>
       
-      <TouchableOpacity onPress={handleLogin} style={[styles.button, { backgroundColor: '#3498db' }]}>
-        <Text style={styles.buttonText}>Entrar</Text>
+      {/*Login Button*/}
+      <TouchableOpacity onPress={handleLogin} style={[styles.button]}>
+        <Text style={styles.buttonText}>LOGIN</Text>
       </TouchableOpacity>
 
+      {/*Register Text */}
       <View style={styles.register}>
-      <TouchableOpacity onPress={handleRegister}>
-        <Text style={styles.text2}>No tienes una cuenta?</Text>
-        <Text style={styles.text}>Crear</Text>
-      </TouchableOpacity>
-    </View>
+        <Text style={styles.text2}>No tienes una cuenta?  </Text>
+          <TouchableOpacity onPress={handleRegister}>
+            <Text style={styles.text}>Crear</Text>
+          </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor:'#fcf7e4',
+    alignItems:'center'
+  },
+  UnderTittle:{
+    marginTop:100,
+    width: 300, 
+    height: 300, 
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image:{
+    width: '100%',
+    height: '100%',
+  },
   register:{
     flexDirection: 'row',
-    alignItems: 'center', // Ajusta según sea necesario
+    alignItems: 'center',
+    justifyContent:'flex-end',
+    marginTop:120,
   },
   text: {
     fontSize: 13,
@@ -72,14 +92,10 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: 'black',
   },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+
   buttonText: {
-    color: 'white',
-    fontSize: 16,
+    color: 'black',
+    fontSize: 20,
     fontWeight: 'bold',
     marginTop:3
   },
@@ -89,16 +105,16 @@ const styles = StyleSheet.create({
 
   },
   button:{
+    marginTop:40,
     marginBottom: 10, 
     borderRadius:25,
     width:180,
-    height:30,
-    alignItems:'center'
+    height:50,
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor:'#a7a497'
   },
-  title:{
-    fontSize:30,
-    marginBottom:40
-  },
+  
   icon: {
     marginLeft: 10,
     width: 24,
