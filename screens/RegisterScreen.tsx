@@ -77,6 +77,8 @@ const RegisterScreen = () => {
           placeholder="Nombre de usuario"
           onChangeText={setUsername}
           value={username}
+          placeholderTextColor={'black'}
+
         />
       </View>
 
@@ -89,6 +91,8 @@ const RegisterScreen = () => {
           onChangeText={validacionpasswd}
           secureTextEntry
           value={password}
+          placeholderTextColor={'black'}
+
         />
       </View>
 
@@ -101,6 +105,8 @@ const RegisterScreen = () => {
           onChangeText={validacion}
           secureTextEntry
           value={ConfirmarPasswd}
+          placeholderTextColor={'black'}
+
         />
       </View>
       {error ? <Text style={styles.error}>{error}</Text> : null}
@@ -113,6 +119,8 @@ const RegisterScreen = () => {
           placeholder="Confirmar contraseña"
           onChangeText={setMail}
           value={mail}
+          placeholderTextColor={'black'}
+
         />
       </View>
 
@@ -185,12 +193,11 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop:3
   },
   input: {
     marginBottom: 2,
     padding: 5,
-
+    color:'black'
   },
   button:{
     marginTop:40,

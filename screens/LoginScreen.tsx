@@ -37,6 +37,7 @@ const LoginScreen = ({}) => {
           placeholder="Nombre de usuario"
           onChangeText={setUsername}
           value={username}
+          placeholderTextColor={'black'}
         />
       </View>
 
@@ -49,6 +50,8 @@ const LoginScreen = ({}) => {
           onChangeText={setPassword}
           secureTextEntry
           value={password}
+          placeholderTextColor={'black'}
+
         />
       </View>
       
@@ -116,6 +119,7 @@ const styles = StyleSheet.create({
   input: {
     marginBottom: 2,
     padding: 5,
+    
   },
   button:{
     marginTop:40,
