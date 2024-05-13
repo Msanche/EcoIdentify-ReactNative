@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 
 const LoginScreen = ({}) => {
@@ -26,11 +29,9 @@ const LoginScreen = ({}) => {
       <View style={styles.UnderTittle}>
         <Image source={require('../src/images/UnderTittle.jpg')} style={styles.imageTittle}/>
       </View>
-      {/*Esto es el input de usuario */}
-      <View style={styles.inputContainer}>
-        <Image source={require('../src/Icons/profile.png')} 
-            style={styles.image}
-            ></Image>
+            {/*Esto es el input de usuario */}
+            <View style={styles.inputContainer}>
+      <FontAwesomeIcon icon={faUser} style={styles.icon}/>
         <TextInput
           style={styles.input}
           placeholder="Nombre de usuario"
@@ -38,12 +39,10 @@ const LoginScreen = ({}) => {
           value={username}
         />
       </View>
-      {/*Esto es el input de contraseña */}
 
+      {/*Esto es el input de contraseña */}
       <View style={styles.inputContainer}>
-      <Image source={require('../src/Icons/passwd.png')} 
-            style={styles.image}
-            />
+      <FontAwesomeIcon icon={faLock} style={styles.icon}/>
         <TextInput
           style={styles.input}
           placeholder="Contraseña"
