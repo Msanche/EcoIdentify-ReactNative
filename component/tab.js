@@ -5,7 +5,7 @@
 import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import HomeScren from "../screens/HomeScreen";
+import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import InfoScreen from "../screens/InfoScreen";
 import { StyleSheet, Text } from "react-native";
@@ -40,9 +40,10 @@ const Tabs = () => {
         >
 
             <Tab.Screen
-                name="Home"
-                component={HomeScren}
+                name="INFO"
+                component={InfoScreen}
                 options={{
+                    headerShown: false,
                     tabBarIcon: ({ focused }) => {
                         let iconColor = focused ? '#6200ea' : '#222'; // Color del icono basado en si está enfocado o no
 
@@ -56,19 +57,8 @@ const Tabs = () => {
                 }}
             />
 
-            <Tab.Screen name="Profile" component={ProfileScreen} options={{
-                    tabBarIcon: ({ focused }) => {
-                        let iconColor = focused ? '#6200ea' : '#222'; // Color del icono basado en si está enfocado o no
-
-                        return (
-                            <View style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
-                                <FontAwesomeIcon icon={faUser} size={25} color={iconColor} />
-                                <Text style={{ color: iconColor, fontSize: 12 }}>PROFILE</Text>
-                            </View>
-                        );
-                    },
-                }}/>
-            <Tab.Screen name="Info" component={InfoScreen} options={{
+            <Tab.Screen name="HOME" component={HomeScreen} options={{
+                    headerShown: false,
                     tabBarIcon: ({ focused }) => {
                         let iconColor = focused ? '#6200ea' : '#222'; // Color del icono basado en si está enfocado o no
 
@@ -76,6 +66,19 @@ const Tabs = () => {
                             <View style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
                                 <FontAwesomeIcon icon={faHome} size={25} color={iconColor} />
                                 <Text style={{ color: iconColor, fontSize: 12 }}>HOME</Text>
+                            </View>
+                        );
+                    },
+                }}/>
+            <Tab.Screen name="PROFILE" component={ProfileScreen} options={{
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => {
+                        let iconColor = focused ? '#6200ea' : '#222'; // Color del icono basado en si está enfocado o no
+
+                        return (
+                            <View style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
+                                <FontAwesomeIcon icon={faUser} size={25} color={iconColor} />
+                                <Text style={{ color: iconColor, fontSize: 12 }}>PROFILE</Text>
                             </View>
                         );
                     },
