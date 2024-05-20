@@ -1,10 +1,10 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
-
 
 const LoginScreen = ({}) => {
   const [username, setUsername] = useState('');
@@ -13,6 +13,7 @@ const LoginScreen = ({}) => {
 
   const handleLogin = () => {
     // Aquí puedes implementar la lógica para iniciar sesión
+    navigation.navigate('Tabs' as never );
     console.log('Usuario:', username);
     console.log('Contraseña:', password);
   };

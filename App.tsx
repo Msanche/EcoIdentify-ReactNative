@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+/* eslint-disable prettier/prettier */
+
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
+import Tabs from './component/tab';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +17,10 @@ const App =() => {
             options={{ headerShown: false }}/>
             <Stack.Screen name="Register" component={RegisterScreen}
             options={{ headerShown: false }}/>
-        </Stack.Navigator>
+            <Stack.Screen name="Tabs" component={Tabs}
+            options={{ headerShown: false }}/>
+</Stack.Navigator>
+
     </NavigationContainer>
   )
 }

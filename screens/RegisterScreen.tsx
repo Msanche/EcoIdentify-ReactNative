@@ -1,5 +1,7 @@
+/* eslint-disable prettier/prettier */
+
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
@@ -48,6 +50,7 @@ const RegisterScreen = () => {
       setError('');
     }
   };
+  
   const validacionCorreo = () => {
 
   }
