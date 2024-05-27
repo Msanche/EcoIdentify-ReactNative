@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 
@@ -55,7 +55,7 @@ const LoginScreen = ({}) => {
 
         />
       </View>
-      
+
       {/*Login Button*/}
       <TouchableOpacity onPress={handleLogin} style={[styles.button]}>
         <Text style={styles.buttonText}>LOGIN</Text>
@@ -77,12 +77,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor:'#fcf7e4',
-    alignItems:'center'
+    alignItems:'center',
   },
   UnderTittle:{
     marginTop:100,
-    width: 300, 
-    height: 300, 
+    width: 300,
+    height: 300,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -115,22 +115,21 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop:3
+    marginTop:3,
   },
   input: {
     marginBottom: 2,
     padding: 5,
-    
   },
   button:{
     marginTop:40,
-    marginBottom: 10, 
+    marginBottom: 10,
     borderRadius:25,
     width:180,
     height:50,
     alignItems:'center',
     justifyContent:'center',
-    backgroundColor:'#a7a497'
+    backgroundColor:'#a7a497',
   },
   icon: {
     marginLeft: 10,
@@ -138,7 +137,7 @@ const styles = StyleSheet.create({
     height: 24,
     padding:10,
     resizeMode:'stretch',
-    alignItems:'center'
+    alignItems:'center',
   },
   inputContainer: {
     flexDirection: 'row',
