@@ -4,7 +4,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import HomeScren from '../screens/HomeScreen';
+import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import InfoScreen from '../screens/InfoScreen';
 import { StyleSheet, Text } from 'react-native';
@@ -56,7 +56,7 @@ const Tabs = () => {
 
             <Tab.Screen
                 name="EcoIdentify"
-                component={HomeScren}
+                component={HomeScreen}
                 options={{
                     headerStyle: {
                         backgroundColor: '#fcf7e4', // Cambia el color del header aquí
@@ -77,18 +77,19 @@ const Tabs = () => {
 
 
             <Tab.Screen name="Profile" component={ProfileScreen} options={{
-                headerShown: false,
-                tabBarIcon: ({ focused }) => {
-                    let iconColor = focused ? '#193FC2' : '#030302'; // Color del icono basado en si está enfocado o no
+                    headerShown: false,
+                    tabBarIcon: ({ focused }) => {
+                        let iconColor = focused ? '#193FC2' : '#030302'; // Color del icono basado en si está enfocado o no
 
-                    return (
-                        <View style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
-                            <FontAwesomeIcon icon={faUser} size={25} color={iconColor} />
-                            <Text style={{ color: iconColor, fontSize: 12 }}>PROFILE</Text>
-                        </View>
-                    );
-                },
-            }} />
+                        return (
+                            <View style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
+                                <FontAwesomeIcon icon={faUser} size={25} color={iconColor} />
+                                <Text style={{ color: iconColor, fontSize: 12 }}>PROFILE</Text>
+                            </View>
+                        );
+                    },
+                }}/>
+
 
 
         </Tab.Navigator>
