@@ -5,18 +5,62 @@ import { useNavigation } from '@react-navigation/native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import WebService from '../WebService';
+import axios from 'axios';
+
+
 
 const LoginScreen = ({}) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username,setUsername] = useState('');
+  const [password,setPassword] = useState('');
+  const [loginStatus,setLoginStatus] = useState('');
+  const [error, setError] = useState('');
+
+
   const navigation = useNavigation();
 
-  const handleLogin = () => {
-    // Aquí puedes implementar la lógica para iniciar sesión
-    navigation.navigate('Tabs' as never );
-    console.log('Usuario:', username);
-    console.log('Contraseña:', password);
-  };
+  const handleLogin = async () => {
+    try {
+        // Obtener los productos/materiales recientes desde el servicio web
+        const response = await axios.get(`http://${WebService.host}:${WebService.port}/usuarios`);
+        console.log(response.data); // Añade esto para ver la respuesta del servidor
+        const usersList = response.data.map((item: { nombre: any; contrasena: any;}) => ({
+          user: item.nombre, // Asegúrate de que esto coincide con la propiedad del nombre de usuario
+          contrasena: item.contrasena, // Asegúrate de que esto coincide con la propiedad de la contraseña
+        }));
+        
+        const foundUserPass = usersList.find((u: { contrasena: string; }) => u.contrasena === password);
+        const foundUser = usersList.find((u: { user: string; }) => u.user === username);
+
+
+
+        if (foundUser) {
+          if (foundUser.user === username) {
+            if(foundUserPass.contrasena === password){
+              console.log(foundUser.user);
+              console.log(username);
+              setLoginStatus('Login Successful');
+              console.log("Login Successful");
+              setError('');
+
+              navigation.navigate('Tabs' as never);
+
+            }
+          } else {
+            setLoginStatus('Incorrect User or Password');
+          }
+        } else {
+          setLoginStatus('User Not Found');
+        }
+
+    } catch (errores) {
+        console.log("Usuario o contrasena incorecto");
+        setError('Usuario o contraseña incorrecto');
+        setLoginStatus('');
+
+    }
+};
+
 
   const handleRegister = () => {
     // Aquí puedes implementar la lógica para el registro
@@ -24,6 +68,8 @@ const LoginScreen = ({}) => {
 
     console.log('Registro de nuevo usuario');
   };
+
+
 
   return (
     <View style={styles.container}>
@@ -52,9 +98,12 @@ const LoginScreen = ({}) => {
           secureTextEntry
           value={password}
           placeholderTextColor={'black'}
-
         />
       </View>
+
+
+      {error ? <Text style={styles.error}>{error}</Text> : null}
+      {loginStatus ? <Text style={styles.status}>{loginStatus}</Text> : null}
 
       {/*Login Button*/}
       <TouchableOpacity onPress={handleLogin} style={[styles.button]}>
@@ -69,11 +118,19 @@ const LoginScreen = ({}) => {
           <Text style={styles.text}>Crear</Text>
         </TouchableOpacity>
       </View>
+
+
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  error: {
+    color: 'red',
+  },
+  status: {
+    color: 'green',
+  },
   container: {
     flex: 1,
     backgroundColor:'#fcf7e4',

@@ -1,6 +1,9 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 interface PublicationProps {
   content: string;
@@ -15,17 +18,24 @@ const Publication: React.FC<PublicationProps> = ({ content, onClick }) => {
   );
 };
 
-const PublicationsScreen: React.FC = () => {
+const PublicationsScreen: React.FC<any> = ({data }) => {
+  const navigation = useNavigation();
   const publications = [
     'Publicación 1',
     'Publicación 2',
     'Publicación 3',
     // Agrega más publicaciones aquí
+    
   ];
 
+  console.log(data);
+
+
   const handleAddClick = () => {
-    // Lógica para agregar una nueva publicación
-    console.log('Agregar nueva publicación');
+    console.log();
+    navigation.navigate('Post' as never);
+
+        console.log('Agregar nueva publicación');
   };
 
   const handlePublicationClick = (index: number) => {

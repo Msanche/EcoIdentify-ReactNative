@@ -7,9 +7,6 @@ const SettingsScreen: React.FC = () => {
     <View style={styles.container}>
       <View style={styles.optionsContainer}>
         <TouchableOpacity style={styles.optionButton}>
-          <Text style={styles.optionText}>Cambiar Nombre</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton}>
           <Text style={styles.optionText}>Cambiar Correo</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.optionButton}>
