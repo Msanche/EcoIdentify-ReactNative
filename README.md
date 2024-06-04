@@ -1,79 +1,21 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# EcoIdentify
 
-# Getting Started
+## Descripción
+EcoIdentify es una red social diseñada para entusiastas de la naturaleza, especialmente para aquellos que desean aprender más sobre el fascinante mundo natural que nos rodea. La aplicación proporciona una plataforma interactiva donde los usuarios pueden compartir sus experiencias, conocimientos e imágenes de la naturaleza, así como conectarse con otros amantes de la naturaleza y descubrir nuevas especies.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+**Funcionalidades Actuales:**
+- **Login Funcional:** EcoIdentify cuenta con un sistema de inicio de sesión totalmente funcional que permite a los usuarios acceder de manera segura a sus cuentas.
+- **Navegación Intuitiva:** La aplicación ofrece una navegación fluida entre pantallas, lo que facilita a los usuarios moverse por la aplicación y acceder a diferentes funciones.
+- **Crear Publicaciones:** Aunque la funcionalidad para mostrar publicaciones aún no está implementada, los usuarios tienen la capacidad de agregar nuevas publicaciones a su perfil.
+- **Información de Especies:** La aplicación proporciona información detallada sobre diferentes especies de plantas y animales, lo que permite a los usuarios aprender más sobre la biodiversidad que los rodea.
+- **Perfil de Usuario Limitado:** Los usuarios actualmente no pueden modificar su foto de perfil ni su nombre de usuario en la aplicación.
+- **Visualización de Publicaciones:** La aplicación no muestra las publicaciones, las imágenes ni los amigos del usuario en este momento.
+- **Gestión de Cuenta Limitada:** No se permite a los usuarios cambiar su dirección de correo electrónico o contraseña desde la aplicación.
 
-## Step 1: Start the Metro Server
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## Instalación
+1. Clona el repositorio desde GitHub.
+2. Navega hasta el directorio de la aplicación.
+3. Ejecuta `npm install` para instalar las dependencias.
+4. Se necesita tener la versión de android jellyfish
+5. Clonar el repositorio de backend https://github.com/Msanche/EcoIdentify y seguir las instrucciones

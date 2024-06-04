@@ -14,8 +14,7 @@ import { faHome, faUser, faBook } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { View } from 'react-native-animatable';
 
-const route = useRoute();
-const { data } = route.params; // Aquí obtienes los datos pasados desde LoginScreen
+
 const Tab = createBottomTabNavigator();
 
 
@@ -59,7 +58,7 @@ const Tabs = () => {
             <Tab.Screen
             
                 name="EcoIdentify"
-                component={() => <HomeScreen data={data} />}
+                component={HomeScreen }
                 options={{
                     headerStyle: {
                         backgroundColor: '#fcf7e4', // Cambia el color del header aquí
@@ -76,7 +75,6 @@ const Tabs = () => {
                             </View>
                         );
                     },
-                    params: { data: route.params.data } // Pasar los datos de la pantalla Tabs a la pantalla HomeScreen
                 }}
             />
 

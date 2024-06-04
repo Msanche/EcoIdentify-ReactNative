@@ -10,15 +10,8 @@ import SettingsScreen from './screens/SettingsScreen';
 import PostScreen from './screens/PostScreen';
 
 // Define el tipo de ruta para la pantalla 'Tabs' aquí
-type RootStackParamList = {
-  Login: undefined;
-  Register: undefined;
-  Tabs: { data: { name: string } }; // Define el tipo de la ruta 'Tabs' aquí
-  Settings: undefined;
-  Post: undefined;
-};
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
